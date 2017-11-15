@@ -20,7 +20,7 @@ public class IndexClass {
 
         // type casting int to array
         ArrayList mylist = new ArrayList();
-        
+
         mylist.add("Vivek");
         mylist.add(25);
 
