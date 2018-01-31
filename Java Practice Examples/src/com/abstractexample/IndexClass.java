@@ -1,16 +1,24 @@
 package com.abstractexample;
 
+import java.util.AbstractCollection;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class IndexClass {
+    static {
+        abc = 5;
+    }
+    private static int abc = 10;
 
     public static void main(String args[]){
-        AbstractClass abclass = new AbstractClass() {
-            @Override
-            void myFunction() {
-                System.out.println("In the function");
+        ArrayList<Integer> list = new ArrayList<Integer>(){
+            {
+                add(32);
             }
         };
 
-        abclass.myFunction();
-        abclass.myOtherFunction();
+        System.out.println(abc);
+        System.out.println(list);
+
     }
 }
