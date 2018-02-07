@@ -17,25 +17,25 @@ public class StudentController {
     StudentService studentService;
 
     @RequestMapping(value="/all", method = RequestMethod.GET)
-    public Collection<Student> getAllStudents(){
+    public Iterable<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
 
-    @RequestMapping(value="/{id}", method = RequestMethod.GET)
-    public Student getStudentById(@PathVariable("id") int id){
-        return studentService.getStudentById(id);
-    }
-
-    @RequestMapping(value="/remove/{id}", method = RequestMethod.DELETE)
-    public String removeStudentById(@PathVariable("id") int id){
-        return studentService.removeStudentById(id);
-    }
-
-    @RequestMapping(value = "/update", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public String updateStudent(@RequestBody Student student){
-        return studentService.updateStudent(student);
-    }
-
+//    @RequestMapping(value="/{id}", method = RequestMethod.GET)
+//    public Student getStudentById(@PathVariable("id") int id){
+//        return studentService.getStudentById(id);
+//    }
+//
+//    @RequestMapping(value="/remove/{id}", method = RequestMethod.DELETE)
+//    public String removeStudentById(@PathVariable("id") int id){
+//        return studentService.removeStudentById(id);
+//    }
+//
+//    @RequestMapping(value = "/update", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+//    public String updateStudent(@RequestBody Student student){
+//        return studentService.updateStudent(student);
+//    }
+//
     @RequestMapping(value = "/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public String insertStudent(@RequestBody Student student){
         return studentService.insertStudent(student);
