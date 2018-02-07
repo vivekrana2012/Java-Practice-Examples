@@ -17,18 +17,21 @@ public class StudentService {
         return studentRepo.findAll();
     }
 
-//    public Student getStudentById(int id){
-//        return fakeStudentDaoImpl.getStudentById(id);
-//    }
-//
-//    public String removeStudentById(int id){
-//        return fakeStudentDaoImpl.removeStudentById(id);
-//    }
-//
-//    public String updateStudent(Student student){
-//        return fakeStudentDaoImpl.updateStudent(student);
-//    }
-//
+    public Student getStudentById(int id){
+        return studentRepo.findOne(id);
+    }
+
+    public String removeStudentById(int id){
+        studentRepo.delete(id);
+        return "ok";
+    }
+
+    public String updateStudent(Student student){
+        studentRepo.delete(student.getId());
+        studentRepo.save(student);
+        return "ok";
+    }
+
     public String insertStudent(Student student){
         studentRepo.save(student);
         return "ok";

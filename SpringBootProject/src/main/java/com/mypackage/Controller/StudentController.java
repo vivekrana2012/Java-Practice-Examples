@@ -21,21 +21,21 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
-//    @RequestMapping(value="/{id}", method = RequestMethod.GET)
-//    public Student getStudentById(@PathVariable("id") int id){
-//        return studentService.getStudentById(id);
-//    }
-//
-//    @RequestMapping(value="/remove/{id}", method = RequestMethod.DELETE)
-//    public String removeStudentById(@PathVariable("id") int id){
-//        return studentService.removeStudentById(id);
-//    }
-//
-//    @RequestMapping(value = "/update", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-//    public String updateStudent(@RequestBody Student student){
-//        return studentService.updateStudent(student);
-//    }
-//
+    @RequestMapping(value="/{id}", method = RequestMethod.GET)
+    public Student getStudentById(@PathVariable("id") int id){
+        return studentService.getStudentById(id);
+    }
+
+    @RequestMapping(value="/remove/{id}", method = RequestMethod.DELETE)
+    public String removeStudentById(@PathVariable("id") int id){
+        return studentService.removeStudentById(id);
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String updateStudent(@RequestBody Student student){
+        return studentService.updateStudent(student);
+    }
+
     @RequestMapping(value = "/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public String insertStudent(@RequestBody Student student){
         return studentService.insertStudent(student);
