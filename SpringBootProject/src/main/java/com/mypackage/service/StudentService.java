@@ -1,11 +1,12 @@
-package com.mypackage.Service;
+package com.mypackage.service;
 
-import com.mypackage.Dao.FakeStudentDaoImpl;
-import com.mypackage.Dao.StudentRepo;
-import com.mypackage.Entity.Student;
+import com.mypackage.dao.StudentRepo;
+import com.mypackage.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import java.util.Collection;
+
+import java.util.List;
 
 @Service
 public class StudentService {
@@ -18,7 +19,7 @@ public class StudentService {
     }
 
     public Student getStudentById(int id){
-        return studentRepo.findOne(id);
+        return studentRepo.getStudentById(id);
     }
 
     public String removeStudentById(int id){
@@ -35,5 +36,9 @@ public class StudentService {
     public String insertStudent(Student student){
         studentRepo.save(student);
         return "ok";
+    }
+
+    public List<Student> getStudentByName(String name) {
+        return studentRepo.getStudentByName(name, new Sort("id"));
     }
 }
