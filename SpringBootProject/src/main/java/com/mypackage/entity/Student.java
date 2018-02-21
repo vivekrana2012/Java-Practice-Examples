@@ -1,4 +1,6 @@
-package com.mypackage.Entity;
+package com.mypackage.entity;
+
+import com.mypackage.annotations.CourseConstraint;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,6 +14,7 @@ public class Student {
     private int id;
     @Size(min=2, max=20)
     private String name;
+    @CourseConstraint
     private String course;
 
     public Student(int id, String name, String course) {

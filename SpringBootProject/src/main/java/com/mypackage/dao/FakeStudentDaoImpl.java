@@ -1,6 +1,6 @@
-package com.mypackage.Dao;
+package com.mypackage.dao;
 
-import com.mypackage.Entity.Student;
+import com.mypackage.entity.Student;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;

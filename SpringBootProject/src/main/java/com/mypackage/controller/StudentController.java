@@ -1,14 +1,13 @@
-package com.mypackage.Controller;
+package com.mypackage.controller;
 
-import com.mypackage.Entity.Student;
-import com.mypackage.Service.StudentService;
+import com.mypackage.entity.Student;
+import com.mypackage.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.awt.*;
-import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("/students")
@@ -16,6 +15,11 @@ public class StudentController {
 
     @Autowired
     StudentService studentService;
+
+    @RequestMapping(value="/name/{name}", method = RequestMethod.GET)
+    public List<Student> getStudentByName(@PathVariable(value = "name", required = true) String name){
+        return studentService.getStudentByName(name);
+    }
 
     @RequestMapping(value="/all", method = RequestMethod.GET)
     public Iterable<Student> getAllStudents(){
