@@ -18,6 +18,8 @@ public class MapExamples {
         linkedHashMap.put("rahul", "brother");
         linkedHashMap.put("nidhi", "sister");
 
+        linkedHashMap.hashCode();
+
         System.out.println(linkedHashMap.keySet());
         linkedHashMap.get("rahul");
         System.out.println(linkedHashMap.keySet());

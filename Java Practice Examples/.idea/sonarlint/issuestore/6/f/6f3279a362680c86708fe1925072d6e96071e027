@@ -1,0 +1,12 @@
+
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ı™øøÿÿÿÿ8òÛêï,
+_squid:UselessImportCheck"4Remove this unused import 'java.util.stream.Stream'.(ó÷”8Ä¼ï,
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(òÇÁÙûÿÿÿÿ
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ı™øøÿÿÿÿ8ìï,
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ïÊ‰¸ÿÿÿÿÿ8¿ÿï,
+`squid:S1612"=Replace this lambda with method reference 'Objects::nonNull'.(˜ŸùÅûÿÿÿÿ8ŒŠï,
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(˜ŸùÅûÿÿÿÿ8ª²ûï,
