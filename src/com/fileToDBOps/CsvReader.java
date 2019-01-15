@@ -3,9 +3,12 @@ package com.fileToDBOps;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class CsvReader implements Reader {
 
@@ -14,11 +17,10 @@ public class CsvReader implements Reader {
 
         List<EmployeeRecord> employeeRecordList = new ArrayList();
 
-        try {
-            FileReader fr = new FileReader(path.toFile());
-            BufferedReader br = new BufferedReader(fr);
+        try{
+            Stream<String> stream = Files.lines(path);
 
-            br.lines().skip(1).forEach(e -> {
+            stream.skip(1).forEach(e -> {
                 String[] items = e.split(",");
 
                 employeeRecordList.add(new EmployeeRecord.Builder()
@@ -30,8 +32,9 @@ public class CsvReader implements Reader {
                         .build());
 
             });
-        }catch (FileNotFoundException ex){
-            System.out.println("File was not found.");
+
+        }catch (IOException ex){
+            System.out.println(ex.getMessage());
         }
 
         return employeeRecordList;
