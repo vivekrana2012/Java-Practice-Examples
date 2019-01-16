@@ -1,4 +1,4 @@
-package com.com.defaultmethods;
+package com.defaultmethods;
 
 public interface Mother {
 

@@ -1,7 +1,5 @@
 package com.objectinit;
 
-import com.abstractexample.AbstractClass;
-
 public class ObjectInitIndex {
 
     private static int bar = 1;

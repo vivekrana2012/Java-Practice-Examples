@@ -1,8 +1,6 @@
-package com.abstractexample;
+package com.staticexample;
 
-import java.util.AbstractCollection;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class IndexClass {
     static {

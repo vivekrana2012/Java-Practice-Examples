@@ -1,8 +1,9 @@
-package com.com.defaultmethods;
+package com.defaultmethods;
 
 import java.util.ArrayList;
 
-public class Index implements Father, Mother{
+public class Index implements Father, Mother {
+
     @Override
     public void hairProperties() {
         System.out.println("black and short");
